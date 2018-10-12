@@ -1,4 +1,4 @@
-# ai-session-01 [Readme v0.1]
+# Frontend Session 01: Thinking in Components with React [Readme v0.1]
 Repositorio del material utilizado en el evento Frontend Session 01: Thinking in Components with React
 
 ## Comenzando...
