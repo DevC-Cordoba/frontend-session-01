@@ -1,0 +1,298 @@
+.player {
+    width: 110px;
+    height: 110px;
+    background: url("../images/loader.gif") no-repeat #00B3FF;
+    border: 2px solid #000000;
+    box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.55), inset 0px -2px 4px rgba(0, 0, 0, 0.45);
+    border-radius: 55px;
+    position: fixed;
+    top: 160px;
+    left: 50%;
+    transition: transform 1s ease;
+    z-index: 90;
+    background-size: 40px;
+    background-position: center center;
+}
+
+.player .shine {
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 30px;
+    z-index: 10;
+}
+
+.player img{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.55), inset 0px -2px 4px rgba(0, 0, 0, 0.45);
+    border-radius: 170px;
+    height: 100px;
+    width: 100px;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 4px;
+}
+
+.player .name {
+    position: absolute;
+    bottom: 120px;
+    width: 110px;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.player .arm {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    opacity: 0;
+    width: 220px;
+    height: auto;
+    box-shadow: none;
+    transform: scale(0);
+    z-index: 125;
+}
+
+.player .foot {
+    position: fixed;
+    top: 46px;
+    left: 50px;
+    opacity: 0;
+    width: 210px;
+    height: auto;
+    box-shadow: none;
+    transform: scale(0);
+    z-index: 120;
+}
+
+.player .shield-action{
+    position: fixed;
+    top: -30px;
+    left: 20px;
+    opacity: 0;
+    width: 150px;
+    height: auto;
+    box-shadow: none;
+    transform: scale(0);
+    z-index: 95;
+}
+
+.game-container .player.player1 {
+  transform: translateX(-146px);
+}
+
+.game-container .player.player1.punch .arm {
+  animation: punchPlayer1 0.9s linear;
+}
+
+.game-container .player.player1.shield .shield-action {
+  animation: punchPlayer1 0.9s linear;
+}
+
+.game-container .player.player1.kick .foot {
+  animation: punchPlayer1 0.9s linear;
+}
+
+.game-container .player.player2 {
+    transform: translateX(30px);
+  }
+  
+  .game-container .player.player2 .arm {
+    left: auto;
+    right: 20px;
+    transform: scaleX(-1);
+  }
+  
+  .game-container .player.player2 .foot {
+    left: auto;
+    right: 20px;
+    transform: scaleX(-1);
+  }
+  
+  .game-container .player.player2 .shield-action {
+      left: auto;
+      right: 50px;
+      transform: scaleX(-1);
+  }
+
+.game-container .player.player2.punch .arm {
+  animation: punchPlayer2 0.9s linear;
+}
+
+.game-container .player.player2.shield .shield-action {
+  animation: punchPlayer2 0.9s linear;
+}
+
+.game-container .player.player2.kick .foot {
+  animation: punchPlayer2 0.9s linear;
+}
+
+@keyframes punchPlayer1 {
+  0% {
+    transform: scale(0, 0) rotateZ(30deg);
+    transform-origin: 13px 50px;
+    opacity: 0;
+  }
+  5%,
+  90% {
+    transform: scale(1, 1) rotateZ(0deg);
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 0) rotateZ(30deg);
+    transform-origin: 13px 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes punchPlayer2 {
+  0% {
+    transform: scale(0, 0) rotateZ(30deg);
+    transform-origin: 100px 0px;
+    opacity: 0;
+  }
+  5%,
+  90% {
+    transform: scale(-1, 1) rotateZ(0deg);
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 0) rotateZ(30deg);
+    transform-origin: 100px 0px;
+    opacity: 0;
+  }
+}
+
+.game-container .player.actions {
+    background: none;
+    z-index: 200;
+    border: none;
+    box-shadow: none;
+}
+
+.game-container .player.player1.actions.punch, .game-container .player.player1.actions.kick {
+    z-index: 300;
+}
+
+.game-container .player.player2.actions.punch, .game-container .player.player2.actions.kick {
+    z-index: 300;
+}
+
+.gameover .player.winner {
+  transform: translateX(-50%) scale(1.4);
+  opacity: 1;
+  z-index: 900;
+}
+
+.game-container.gameover .player .arm {
+    display: none;
+}
+
+.game-container.gameover .player .shield-action {
+    display: none;
+}
+
+.game-container.gameover .player .foot {
+    display: none;
+}
+
+.gameover .player {
+  opacity: 0;
+}
+
+.gameover .player.winner .name {
+  opacity: 0;
+}
+
+.winner-message {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+
+.winner-message span.player-name {
+  display: block;
+  font-size: 36px;
+}
+
+.winner-message span.player-wins {
+  font-size: 48px;
+}
+
+.life-bar-containter {
+    width: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    height: 300px;
+    border: 1px solid #FFFFFF70;
+    position: fixed;
+    top: 20px;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.72, -0.16, 0, 1.31);
+}
+
+.life-bar-containter.player1 {
+  left: 10px;
+}
+
+.life-bar-containter.player2 {
+  right: 10px;
+}
+
+.loading .life-bar-containter {
+  opacity: 0;
+}
+
+.gameover .life-bar-containter.player1 {
+  transform: translateX(-100px);
+}
+
+.gameover .life-bar-containter.player2 {
+  transform: translateX(100px);
+}
+
+.life-bar {
+  height: 300px;
+  width: 20px;
+  background: linear-gradient(90deg, #ffffff 9.5%, rgba(255, 255, 255, 0) 25%),
+    linear-gradient(90deg, #ffe602 30%, rgba(255, 230, 2, 0) 100%), #60ce2c;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 8px #60ce2c, 0px 1px 28px rgba(96, 206, 44, 0.4),
+    inset -3px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.4s ease 0.6s;
+  z-index: 5;
+}
+
+.life-bar-red {
+  height: 300px;
+  width: 20px;
+  background: red;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.8s ease 1.1s;
+  z-index: 2;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

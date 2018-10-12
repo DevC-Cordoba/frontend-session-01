@@ -1,0 +1,57 @@
+.joystick {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    z-index: 900;
+    transform: translateX(-50%);
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    background-size: cover;
+    height: 90px;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+    .joystick .joystick-button {
+        display: block;
+        width: 60px;
+        background-color: #0C172B;
+        border: 1px solid #00B3FF;
+        box-sizing: border-box;
+        border-radius: 16px;
+        height: 60px;
+        margin: 0 5px 10px;
+        background-size: cover;
+        color: transparent;
+    }
+
+.gameover .joystick {
+    transform: translate(-50%, 170px);
+}
+
+.loading .joystick {
+    transform: translate(-50%, 170px);
+}
+
+.hit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(-10deg);
+    color: #fff;
+    font-size: 36px;
+    z-index: 1000;
+}
+
+.hit span:nth-child(1) {
+    font-size: 48px;
+}
+
+.hit span:nth-child(2) {
+    font-size: 64px;
+}
+
+.gameover .hit {
+    display: none;
+}

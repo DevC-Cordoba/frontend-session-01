@@ -1,0 +1,55 @@
+.game-container{
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+
+    background-image: url("../images/67547.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 24px;
+}
+
+.loader .loader-anim{
+    animation: loader-anim 1s ease;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.loader .loader-anim:nth-child(2){
+    animation-delay: 0.33s;
+}
+
+.loader .loader-anim:nth-child(3){
+    animation-delay: 0.66s;
+}
+
+@keyframes loader-anim {
+    0%{
+        opacity: 0;
+    }
+    33%{
+        opacity: 1;
+    }
+    84%, 100%{
+        opacity: 0;
+    }
+}
+
+.loading .loader {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
