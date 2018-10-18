@@ -34,4 +34,4 @@ $ npm start
 ## Autores
 
 * **Guilermo Fank** - Speaker - [guillermofank9](https://github.com/guillermofank9)
-* **Maximiliano Stahl** - Speaker - [danielstaff](https://github.com/maxistahl)
+* **Maximiliano Stahl** - Speaker - [maxistahl](https://github.com/maxistahl)
